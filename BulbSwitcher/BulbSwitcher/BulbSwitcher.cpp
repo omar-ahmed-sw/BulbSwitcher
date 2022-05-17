@@ -55,14 +55,22 @@ uint32 BulbSwitcher(uint32 Bulbs)
 	uint32 onBulbs = 0U;
 
 	for (uint32 i = 1U; i*i <= Bulbs; i++)    //you don't need to travel the whole range
-	{                                          //  increase the on bulbs if index of complete square exists ;)
+	{                                         //  increase the onbulbs if index of complete square exists ;)
 		onBulbs++;
 	}
 
 	return onBulbs;
 }
+/*
 
+//another way can only return the square root of the bulbs number which indicates how many bulbs on 
+//the integer of the sqr 
+uint32 BulbSwitcher(uint32 Bulbs)
+{
+return sqrt(Bulbs);
+}
 
+*/
 
 int main()
 {
