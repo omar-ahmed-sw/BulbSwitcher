@@ -33,6 +33,14 @@ Constraints:
 
 0 <= n <= 10^9
 
+
+//new approach
+
+discovered that at the end the only ones that's going to stay on are those who are complete square
+let's say 8 bulbs
+at the end only number 1 and number 4 are on
+so we need to discover how many numbers has complete square with in the n given and that's it, don't care where they are
+so no need to an array and that
 */
 
 #include "stdafx.h"
