@@ -47,31 +47,19 @@ so no need to an array and that
 #include <stdio.h>
 #include <iostream>
 #include "TypeDef.h"
-#include <algorithm> 
+#include <math.h>
+
 
 uint32 BulbSwitcher(uint32 Bulbs)
 {
-	uint16* BulbsArray = new uint16 [Bulbs]; ///starts with all bulbs off 
-	std::fill_n(BulbsArray, Bulbs, 0);   ///to initialise the new operator array at once
 	uint32 onBulbs = 0U;
+	uint32 Sqr = 0U;    //ASSIGN THE SQUARE TO INT TO CHECK IF IT'S COMPLETE SQUARE OR NOT
 
 	for (uint32 i = 1U; i <= Bulbs; i++)
 	{
-		if (i == 1U)
-		{
-			std::fill_n(BulbsArray, Bulbs, 1);   ///to initialise the new operator array at once
-			continue;
-		}
+		Sqr = sqrt(i);
 
-		for (uint32 j = i; j <= Bulbs; j += i)
-		{
-			BulbsArray[j-1] = !BulbsArray[j-1];
-		}
-
-	}
-	for (uint32 i = 0U; i < Bulbs; i++)
-	{
-		if(BulbsArray[i] == 1U)
+		if ((Sqr * Sqr) == i)   //Sqr will only have the int bit of the square root and if it's not complete will be false 
 		{
 			onBulbs++;
 		}
