@@ -53,16 +53,10 @@ so no need to an array and that
 uint32 BulbSwitcher(uint32 Bulbs)
 {
 	uint32 onBulbs = 0U;
-	uint32 Sqr = 0U;    //ASSIGN THE SQUARE TO INT TO CHECK IF IT'S COMPLETE SQUARE OR NOT
 
-	for (uint32 i = 1U; i <= Bulbs; i++)
-	{
-		Sqr = sqrt(i);
-
-		if ((Sqr * Sqr) == i)   //Sqr will only have the int bit of the square root and if it's not complete will be false 
-		{
-			onBulbs++;
-		}
+	for (uint32 i = 1U; i*i <= Bulbs; i++)    //you don't need to travel the whole range
+	{                                          //  increase the on bulbs if index of complete square exists ;)
+		onBulbs++;
 	}
 
 	return onBulbs;
